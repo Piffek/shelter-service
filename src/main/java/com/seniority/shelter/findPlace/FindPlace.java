@@ -1,7 +1,6 @@
-package com.seniority.shelter.domain;
+package com.seniority.shelter.findPlace;
 
-import com.seniority.shelter.dataaccess.FindPlaceRepository;
-import com.seniority.shelter.dataaccess.entites.Place;
+import com.seniority.shelter.findPlace.entities.Place;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

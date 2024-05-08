@@ -1,7 +1,6 @@
-package com.seniority.shelter.rest;
+package com.seniority.shelter.findPlace;
 
-import com.seniority.shelter.dataaccess.entites.Place;
-import com.seniority.shelter.domain.FindPlace;
+import com.seniority.shelter.findPlace.entities.Place;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;

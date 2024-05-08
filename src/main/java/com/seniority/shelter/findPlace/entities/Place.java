@@ -1,4 +1,4 @@
-package com.seniority.shelter.dataaccess.entites;
+package com.seniority.shelter.findPlace.entities;
 
 
 import jakarta.persistence.Entity;
