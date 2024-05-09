@@ -1,4 +1,4 @@
-package com.seniority.shelter.findPlace.entities;
+package com.seniority.shelter.createPlace.entities;
 
 
 import jakarta.persistence.Entity;
@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "FIND_PLACE")
+@Entity(name = "CREATE_PLACE")
 @Table(name = "PLACE")
 public class Place {
 
@@ -24,5 +24,11 @@ public class Place {
 
     // for JPA only, no use
     public Place() {
+    }
+
+    public Place(String name, String city, String postcode) {
+        this.name = name;
+        this.city = city;
+        this.postcode = postcode;
     }
 }

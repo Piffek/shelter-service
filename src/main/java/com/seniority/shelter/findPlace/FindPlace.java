@@ -1,5 +1,6 @@
 package com.seniority.shelter.findPlace;
 
+import com.seniority.shelter.findPlace.dtos.PlaceDto;
 import com.seniority.shelter.findPlace.entities.Place;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,16 @@ public class FindPlace {
 
     private final FindPlaceRepository findPlaceRepository;
 
-    public List<Place> findAll() {
-        return (List<Place>) findPlaceRepository.findAll();
+    public List<PlaceDto> findAll() {
+        var places = (List<Place>) findPlaceRepository.findAll();
+
+        return places
+                .stream()
+                .map(this::toDto)
+                .toList();
+    }
+
+    private PlaceDto toDto(Place place) {
+        return new PlaceDto(place.getId(), place.getName(), place.getCity(), place.getPostcode());
     }
 }

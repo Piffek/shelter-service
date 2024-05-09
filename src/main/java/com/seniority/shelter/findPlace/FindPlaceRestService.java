@@ -1,5 +1,6 @@
 package com.seniority.shelter.findPlace;
 
+import com.seniority.shelter.findPlace.dtos.PlaceDto;
 import com.seniority.shelter.findPlace.entities.Place;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class FindPlaceRestService {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    private List<Place> findAll() {
+    private List<PlaceDto> findAll() {
         return findPlace.findAll();
     }
 }
