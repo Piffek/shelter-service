@@ -1,10 +1,10 @@
 package com.seniority.shelter.addPet;
 
-import com.seniority.shelter.addPet.command.AddPetCommand;
 import com.seniority.shelter.addPet.request.AddPetRequest;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.shelter.commands.AddPetCommand;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +23,7 @@ public class AddPetProducer {
     @Resource
     private RabbitTemplate rabbitTemplate;
 
-    public void produce(int shelterId, AddPetRequest addPetRequest) {
+    public void produce(Long shelterId, AddPetRequest addPetRequest) {
         log.info("Add pet to shelter...");
         var command = new AddPetCommand(addPetRequest.getName(), addPetRequest.getFoundCity(), shelterId);
         rabbitTemplate.convertAndSend(topicExchangeName, petRoutingKey, command);
