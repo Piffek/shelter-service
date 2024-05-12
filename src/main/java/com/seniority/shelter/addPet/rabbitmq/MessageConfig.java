@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 
 @Configuration
 @EnableAutoConfiguration
@@ -36,7 +35,7 @@ public class MessageConfig {
     }
 
     @Bean
-    public Binding petBinding(){
+    public Binding petBinding() {
         return BindingBuilder
                 .bind(petQueue())
                 .to(appExchange())
