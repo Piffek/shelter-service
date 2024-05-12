@@ -1,4 +1,4 @@
-package com.seniority.shelter.addPet.rabbitmq;
+package com.seniority.shelter.addPet.messagebroker;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
