@@ -1,5 +1,6 @@
 package com.seniority.shelter.addPet;
 
+import com.seniority.shelter.addPet.messagebroker.producers.AddPetProducer;
 import com.seniority.shelter.addPet.request.AddPetRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
