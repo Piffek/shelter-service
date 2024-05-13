@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/place")
+@RequestMapping("/api/place/create")
 @RequiredArgsConstructor
 public class CreatePlaceRestService {
     private final CreatePlace createPlace;
 
-    @PostMapping("/create")
+    @PostMapping()
     @ResponseStatus(HttpStatus.OK)
     private void create(@RequestBody CreatePlaceRequest createPlaceRequest) {
         createPlace.createPlace(createPlaceRequest);

@@ -22,6 +22,12 @@ public class FindPlace {
                 .toList();
     }
 
+    public String nameById(Long shelterId) {
+        var place = findPlaceRepository.findById(shelterId)
+                .orElseThrow(() -> new IllegalArgumentException("cannot found shelter with if %s".formatted(shelterId)));
+        return place.getName();
+    }
+
     private PlaceDto toDto(Place place) {
         return new PlaceDto(place.getId(), place.getName(), place.getCity(), place.getPostcode());
     }
