@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/pet")
+@RequestMapping("/api/place/add-pet")
 @RequiredArgsConstructor
 public class AddPetRestService {
 
