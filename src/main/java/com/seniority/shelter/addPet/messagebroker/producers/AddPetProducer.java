@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AddPetProducer {
 
-    @Value("${topic.exchange.name}")
+    @Value("${pet.exchange.name}")
     private String topicExchangeName;
 
     @Value("${pet.routing.key}")
@@ -26,5 +26,4 @@ public class AddPetProducer {
         var command = new AddPetCommand(addPetRequest.getName(), addPetRequest.getFoundCity(), shelterId);
         rabbitTemplate.convertAndSend(topicExchangeName, petRoutingKey, command);
     }
-
 }

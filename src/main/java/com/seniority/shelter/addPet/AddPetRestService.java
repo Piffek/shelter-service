@@ -20,7 +20,8 @@ public class AddPetRestService {
 
     @PostMapping("/{shelterId}")
     @ResponseStatus(HttpStatus.OK)
-    private void addPetToShelter(@PathVariable("shelterId") Long shelterId, @RequestBody AddPetRequest addPetRequest) {
+    private String addPetToShelter(@PathVariable("shelterId") Long shelterId, @RequestBody AddPetRequest addPetRequest) {
         addPetProducer.produce(shelterId, addPetRequest);
+        return "creating...";
     }
 }

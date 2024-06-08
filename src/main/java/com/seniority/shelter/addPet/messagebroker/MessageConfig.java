@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 public class MessageConfig {
 
-    @Value("${topic.exchange.name}")
-    private String topicExchangeName;
+    @Value("${pet.exchange.name}")
+    private String petExchangeName;
 
     @Value("${pet.queue.name}")
     private String petQueueName;
@@ -30,15 +30,15 @@ public class MessageConfig {
     }
 
     @Bean
-    public TopicExchange appExchange() {
-        return new TopicExchange(topicExchangeName);
+    public TopicExchange petExchange() {
+        return new TopicExchange(petExchangeName);
     }
 
     @Bean
     public Binding petBinding() {
         return BindingBuilder
                 .bind(petQueue())
-                .to(appExchange())
+                .to(petExchange())
                 .with(petRoutingKey);
     }
 
