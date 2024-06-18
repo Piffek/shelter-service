@@ -30,7 +30,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
 	implementation group: 'org.springframework.amqp', name: 'spring-rabbit', version: '3.1.4'
-	implementation group: 'org.shelter.mq', name: 'objects', version: '1.0-SNAPSHOT'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.1'
 }

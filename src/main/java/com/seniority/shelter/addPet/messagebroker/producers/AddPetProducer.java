@@ -1,9 +1,9 @@
 package com.seniority.shelter.addPet.messagebroker.producers;
 
+import com.seniority.shelter.addPet.messagebroker.command.AddPetCommand;
 import com.seniority.shelter.addPet.request.AddPetRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.shelter.commands.AddPetCommand;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
