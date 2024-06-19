@@ -41,9 +41,4 @@ public class MessageConfig {
                 .to(petExchange())
                 .with(petRoutingKey);
     }
-
-    @Bean
-    public MessageConverter jsonMessageConverter() {
-        return new Jackson2JsonMessageConverter();
-    }
 }
