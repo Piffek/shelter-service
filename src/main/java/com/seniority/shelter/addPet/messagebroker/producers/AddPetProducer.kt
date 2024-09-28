@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service
 
 @Service
 class AddPetProducer(val petProperties: PetProperties, val rabbitTemplate: RabbitTemplate) {
-    fun produce(shelterId: Long?, addPetRequest: AddPetRequest) {
+    fun produce(shelterId: Long, addPetRequest: AddPetRequest) {
         val command = AddPetCommand(
-            addPetRequest.name, addPetRequest.foundCity,
-            shelterId!!
+            addPetRequest.name,
+            addPetRequest.foundCity,
+            shelterId
         )
         rabbitTemplate.convertAndSend(petProperties.exchangeName, petProperties.routingKey, convertToJson(command))
     }
