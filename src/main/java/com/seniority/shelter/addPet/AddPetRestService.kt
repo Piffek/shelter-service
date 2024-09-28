@@ -3,7 +3,6 @@ package com.seniority.shelter.addPet
 import com.seniority.shelter.addPet.messagebroker.producers.AddPetProducer
 import com.seniority.shelter.addPet.request.AddPetRequest
 import org.springframework.http.HttpStatus
-import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
