@@ -10,7 +10,7 @@ class FindPlace(private val findPlaceRepository: FindPlaceRepository) {
 
     fun findAll(): List<PlaceDto> {
         val places = findPlaceRepository.findAll()
-        return places.filterNotNull().map { place -> this.toDto(place) }
+        return places.map { place -> this.toDto(place) }
     }
 
     fun nameById(shelterId: Long): String {
