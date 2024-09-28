@@ -1,6 +1,6 @@
 package com.seniority.shelter.findPlace
 
-import com.seniority.shelter.findPlace.dtos.PlaceDto
+import com.seniority.shelter.findPlace.dto.PlaceDto
 import com.seniority.shelter.findPlace.entities.Place
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service

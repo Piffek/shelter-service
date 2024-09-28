@@ -1,6 +1,6 @@
 package com.seniority.shelter.findPlace
 
-import com.seniority.shelter.findPlace.dtos.PlaceDto
+import com.seniority.shelter.findPlace.dto.PlaceDto
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
