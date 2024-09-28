@@ -1,17 +1,14 @@
-package com.seniority.shelter.createPlace;
+package com.seniority.shelter.createPlace
 
-import com.seniority.shelter.createPlace.entities.Place;
-import com.seniority.shelter.createPlace.request.CreatePlaceRequest;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.seniority.shelter.createPlace.entities.Place
+import com.seniority.shelter.createPlace.request.CreatePlaceRequest
+import org.springframework.stereotype.Service
 
 @Service
-@RequiredArgsConstructor
-public class CreatePlace {
-    private final CreatePlaceRepository createPlaceRepository;
+class CreatePlace(private val createPlaceRepository: CreatePlaceRepository) {
 
-    public void createPlace(CreatePlaceRequest createPlaceRequest) {
-        var place = new Place(createPlaceRequest.getName(), createPlaceRequest.getCity(), createPlaceRequest.getPostcode());
-        createPlaceRepository.save(place);
+    fun createPlace(createPlaceRequest: CreatePlaceRequest) {
+        val place = Place(createPlaceRequest.name, createPlaceRequest.city, createPlaceRequest.postcode)
+        createPlaceRepository.save(place)
     }
 }

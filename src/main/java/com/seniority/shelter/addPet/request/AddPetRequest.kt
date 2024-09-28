@@ -1,11 +1,3 @@
-package com.seniority.shelter.addPet.request;
+package com.seniority.shelter.addPet.request
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-@Getter
-public class AddPetRequest {
-    private final String name;
-    private final String foundCity;
-}
+data class AddPetRequest(val name: String, val foundCity: String)

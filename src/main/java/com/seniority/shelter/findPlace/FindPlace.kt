@@ -1,34 +1,26 @@
-package com.seniority.shelter.findPlace;
+package com.seniority.shelter.findPlace
 
-import com.seniority.shelter.findPlace.dtos.PlaceDto;
-import com.seniority.shelter.findPlace.entities.Place;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.seniority.shelter.findPlace.dtos.PlaceDto
+import com.seniority.shelter.findPlace.entities.Place
+import org.springframework.data.repository.findByIdOrNull
+import org.springframework.stereotype.Service
 
 @Service
-@RequiredArgsConstructor
-public class FindPlace {
+class FindPlace(private val findPlaceRepository: FindPlaceRepository) {
 
-    private final FindPlaceRepository findPlaceRepository;
-
-    public List<PlaceDto> findAll() {
-        var places = (List<Place>) findPlaceRepository.findAll();
-
-        return places
-                .stream()
-                .map(this::toDto)
-                .toList();
+    fun findAll(): List<PlaceDto> {
+        val places = findPlaceRepository.findAll()
+        return places.filterNotNull().map { place -> this.toDto(place) }
     }
 
-    public String nameById(Long shelterId) {
-        var place = findPlaceRepository.findById(shelterId)
-                .orElseThrow(() -> new IllegalArgumentException("cannot found shelter with if %s".formatted(shelterId)));
-        return place.getName();
+    fun nameById(shelterId: Long): String {
+        val place = findPlaceRepository.findByIdOrNull(shelterId)
+            ?: throw IllegalArgumentException("cannot found shelter with if $shelterId")
+
+        return place.name
     }
 
-    private PlaceDto toDto(Place place) {
-        return new PlaceDto(place.getId(), place.getName(), place.getCity(), place.getPostcode());
+    private fun toDto(place: Place): PlaceDto {
+        return PlaceDto(place.id, place.name, place.city, place.postcode)
     }
 }

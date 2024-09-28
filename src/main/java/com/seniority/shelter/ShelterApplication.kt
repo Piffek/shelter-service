@@ -1,15 +1,18 @@
-package com.seniority.shelter;
+package com.seniority.shelter
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import com.seniority.shelter.addPet.messagebroker.PetProperties
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.EnableConfigurationProperties
+import org.springframework.boot.runApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 
-@SpringBootApplication()
+@SpringBootApplication
 @EnableDiscoveryClient
-public class ShelterApplication {
+@EnableConfigurationProperties(PetProperties::class)
+class ShelterApplication
 
-    public static void main(String[] args) {
-        SpringApplication.run(ShelterApplication.class, args);
-    }
-
+fun main(args: Array<String>) {
+    runApplication<ShelterApplication>(*args)
 }
+
+

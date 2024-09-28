@@ -1,4 +1,3 @@
-package com.seniority.shelter.addPet.dto;
+package com.seniority.shelter.addPet.dto
 
-public record PetDto(String name) {
-}
+data class PetDto(val name: String)

@@ -1,15 +1,3 @@
-package com.seniority.shelter.createPlace.request;
+package com.seniority.shelter.createPlace.request
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@RequiredArgsConstructor
-public class CreatePlaceRequest {
-    private Long id;
-    private String name;
-    private String city;
-    private String postcode;
-}
+data class CreatePlaceRequest(val id: Long, val name: String, val city: String, val postcode: String)

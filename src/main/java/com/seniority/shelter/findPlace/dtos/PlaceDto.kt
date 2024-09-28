@@ -1,5 +1,3 @@
-package com.seniority.shelter.findPlace.dtos;
+package com.seniority.shelter.findPlace.dtos
 
-public record PlaceDto(Long id, String name, String city, String postcode) {
-
-}
+data class PlaceDto(val id: Long, val name: String, val city: String, val postcode: String)
